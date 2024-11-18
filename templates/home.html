@@ -20,9 +20,29 @@
             {% endfor %}
         </ul>
         <h3>Series que estoy viendo</h3>
-            <p>{{ lista_series[username]['viendo'] }}</p>
+        <ul>
+            {% for series in lista_series[username]['viendo'] %}
+                <h4>{{ series[0] }}</h4>
+                <li>Puntuación: {{ series[1] }}</li>
+                <li>Género: {{ series[2] }}</li>
+                <li>Fecha de Estreno: {{ series[3] }}</li>
+                <li>Capítulos: {{ series[4] }}</li>
+                <li>Duración de capítulos: {{ series[5] }}</li>
+                <li>Sinopsis: {{ series[6] }}</li>
+            {% endfor %}
+        </ul>
         <h3>Series vistas</h3>
-            <p>{{ lista_series[username]['vistas'] }}</p>
+        <ul>
+            {% for series in lista_series[username]['vistas'] %}
+                <h4>{{ series[0] }}</h4>
+                <li>Puntuación: {{ series[1] }}</li>
+                <li>Género: {{ series[2] }}</li>
+                <li>Fecha de Estreno: {{ series[3] }}</li>
+                <li>Capítulos: {{ series[4] }}</li>
+                <li>Duración de capítulos: {{ series[5] }}</li>
+                <li>Sinopsis: {{ series[6] }}</li>
+            {% endfor %}
+        </ul>
         <a href="{{ url_for('agregar_serie') }}"><button>Agregar Serie</button></a>
         <a href="{{ url_for('logout_func') }}"><button>Cerrar Sesión</button></a>
     {% else %}
