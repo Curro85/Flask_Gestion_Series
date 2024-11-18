@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Series</title>
+</head>
+<body>
+    {% if logged_in %}
+        <h2>Bienvenido {{ username }}</h2>
+        <h3>Series que me gustarían ver</h3>
+        <ul>
+            {% for series in lista_series[username]['por_ver'] %}
+                <h4>{{ series[0] }}</h4>
+                <li>Puntuación: {{ series[1] }}</li>
+                <li>Género: {{ series[2] }}</li>
+                <li>Fecha de Estreno: {{ series[3] }}</li>
+                <li>Capítulos: {{ series[4] }}</li>
+                <li>Duración de capítulos: {{ series[5] }}</li>
+                <li>Sinopsis: {{ series[6] }}</li>
+            {% endfor %}
+        </ul>
+        <h3>Series que estoy viendo</h3>
+            <p>{{ lista_series[username]['viendo'] }}</p>
+        <h3>Series vistas</h3>
+            <p>{{ lista_series[username]['vistas'] }}</p>
+        <a href="{{ url_for('agregar_serie') }}"><button>Agregar Serie</button></a>
+        <a href="{{ url_for('logout_func') }}"><button>Cerrar Sesión</button></a>
+    {% else %}
+        <h2>¿Qué haces tú aquí?</h2>
+        <p><a href="{{ url_for('login_func') }}">Inicia sesión</a>, anda</p>
+    {% endif %}
+</body>
+</html>
