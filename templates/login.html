@@ -3,22 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <h2>INICIAR SESIÓN</h2>
+    <div class="login_div">
+        <h2>INICIAR SESIÓN</h2>
         <form method="post" action="{{  url_for('login_func') }}">
             <label for="username">Usuario:</label>
             <input type="text" id="username" name="username" required>
-            <br><br>
+
             <label for="password">Contraseña:</label>
             <input type="password" id="password" name="password" required>
-            <br><br>
             <button type="submit">Entrar</button>
         </form>
-    <p>Si no tiene cuenta, pulse el botón para registrarse</p>
-    <a href="{{ url_for('register_func') }}"><button>Registrarse</button></a>
-    {% if error %}
-        <p style="color: red">{{ error }}</p>
-    {% endif %}
+        <a href="{{ url_for('register_func') }}"><button>Registrarse</button></a>
+        <p>Si no tiene cuenta, pulse el botón para registrarse</p>
+        {% if error %}
+            <p style="color: red">{{ error }}</p>
+        {% endif %}
+    </div>
 </body>
 </html>

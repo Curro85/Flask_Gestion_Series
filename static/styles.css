@@ -1,0 +1,74 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login_div {
+    width: 300px;
+    background-color: lightgrey;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 4px 8px;
+    border-radius: 10px;
+}
+
+.register_div {
+    width: 300px;
+    background-color: lightgrey;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 4px 8px;
+    border-radius: 10px;
+}
+
+.agregar_div {
+    width: 300px;
+    background-color: lightgrey;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 4px 8px;
+    border-radius: 10px;
+}
+
+.radio_div {
+    display: flex;
+    margin-top: 5px;
+}
+
+.radio_div > input[type=radio] {
+    height: 20px;
+}
+
+form label {
+    display: block;
+    text-align: left;
+    margin: 5px;
+}
+
+input {
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid black;
+    outline: none;
+    transition: border 0.3s;
+}
+
+input:focus {
+    border:2px solid green;
+}
+
+button {
+    background-color: green;
+    margin: 5px;
+    border: solid green;
+    border-radius: 3px;
+    color: white;
+    transition: background-color 0.5s;
+}
+
+button:hover {
+    background-color: darkseagreen;
+}

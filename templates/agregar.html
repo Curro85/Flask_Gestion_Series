@@ -3,48 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <title>Agregar Serie</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <h2>AGREGAR SERIE</h2>
-    <form method="post" action="{{ url_for('agregar_serie') }}">
-        <label for="nombre">Nombre de la serie:</label>
-        <input type="text" name="nombre" id="nombre" required>
-        <br><br>
+    <div class="agregar_div">
+        <h2>AGREGAR SERIE</h2>
+        <form method="post" action="{{ url_for('agregar_serie') }}">
+            <label for="nombre">Nombre de la serie:</label>
+            <input type="text" name="nombre" id="nombre" required>
 
-        <label for="puntuacion">Puntuación:</label>
-        <input type="number" name="puntuacion" id="puntuacion" min="1" max="10" required>
-        <br><br>
+            <label for="puntuacion">Puntuación:</label>
+            <input type="number" name="puntuacion" id="puntuacion" min="1" max="10" required>
 
-        <label for="genero">Género</label>
-        <input type="text" name="genero" id="genero" required>
-        <br><br>
+            <label for="genero">Género</label>
+            <input type="text" name="genero" id="genero" required>
 
-        <label for="fecha">Fecha de Estreno:</label>
-        <input type="date" name="fecha" id="fecha" required>
-        <br><br>
+            <label for="fecha">Fecha de Estreno:</label>
+            <input type="date" name="fecha" id="fecha" required>
 
-        <label for="capitulos">Número de Capítulos:</label>
-        <input type="number" name="capitulos" id="capitulos" min="1" required>
-        <br><br>
+            <label for="capitulos">Número de Capítulos:</label>
+            <input type="number" name="capitulos" id="capitulos" min="1" required>
 
-        <label for="duracion">Duración de los Capítulos (minutos):</label>
-        <input type="number" name="duracion" id="duracion" min="1" required>
-        <br><br>
+            <label for="duracion">Duración de los Capítulos (minutos):</label>
+            <input type="number" name="duracion" id="duracion" min="1" required>
 
-        <label for="sinopsis">Sinopsis:</label>
-        <textarea name="sinopsis" id="sinopsis" cols="30" rows="10"></textarea>
-        <br><br>
+            <label for="sinopsis">Sinopsis:</label>
+            <textarea name="sinopsis" id="sinopsis" cols="30" rows="5"></textarea>
 
-        <input type="radio" id="cat_por_ver" name="categoria" value="por_ver">
-        <label for="cat_por_ver">Me gustaría ver</label>
-        <input type="radio" id="cat_viendo" name="categoria" value="viendo">
-        <label for="cat_viendo">Viendo</label>
-        <input type="radio" id="cat_vista" name="categoria" value="vistas">
-        <label for="cat_vista">Vista</label>
-        <br><br>
+            <div class="radio_div">
+                <input type="radio" id="cat_por_ver" name="categoria" value="por_ver" checked>
+                <label for="cat_por_ver">Por ver</label>
+                <input type="radio" id="cat_viendo" name="categoria" value="viendo">
+                <label for="cat_viendo">Viendo</label>
+                <input type="radio" id="cat_vista" name="categoria" value="vistas">
+                <label for="cat_vista">Vista</label>
+            </div>
 
-        <button type="submit">Agregar</button>
-    </form>
-    <p>{{ category }}</p>
+            <button type="submit">Agregar</button>
+        </form>
+        <a href="{{ url_for('home') }}"><button>Volver</button></a>
+    </div>
 </body>
 </html>
