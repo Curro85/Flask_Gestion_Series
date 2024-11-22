@@ -10,7 +10,7 @@ series = {"paco": {"por_ver": [],
 
 
 @app.route('/')
-def home():  # put application's code here
+def home():
     return render_template('home.html',
                            logged_in=session.get('logged_in'),
                            username=session.get('username'),
