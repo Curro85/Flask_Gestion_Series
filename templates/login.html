@@ -16,10 +16,9 @@
             <input type="password" id="password" name="password" required>
             <button type="submit">Entrar</button>
         </form>
-        <a href="{{ url_for('register_func') }}"><button>Registrarse</button></a>
-        <p>Si no tiene cuenta, pulse el botón para registrarse</p>
+        <p>Si no tiene cuenta, <a href="{{ url_for('register_func') }}">pulse aquí para registrarse</a></p>
         {% if error %}
-            <p style="color: red">{{ error }}</p>
+            <p class="error">{{ error }}</p>
         {% endif %}
     </div>
 </body>
